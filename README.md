@@ -39,8 +39,7 @@ ye lagani hai
 ### Creating Task Section
 ![image](https://user-images.githubusercontent.com/61822515/131076153-be02b6b5-848f-476a-9d00-6b57bf22df37.png)
 
-### Transaction Logs section
-ye lagani hai 
+
 
 
 
