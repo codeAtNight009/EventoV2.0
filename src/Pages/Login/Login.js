@@ -15,50 +15,50 @@ import React, { useState } from "react";
 import GoogleLogin from "react-google-login";
 import { useHistory } from "react-router";
 import Icon from "./Icon.js";
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 
 import useStyle from "./styles.js";
 import { Link } from "react-router-dom";
-import { loginUser } from '../../Actions/UserActions'
+import { loginUser } from "../../Actions/UserActions";
 import { useEffect } from "react";
 
 function Login() {
   const classes = useStyle();
   const history = useHistory();
   const dispatch = useDispatch();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');   
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [checked, setChecked] = useState(false);
 
-  const userLogin = useSelector(state => state.userLogin);
-  const {userInfo} = userLogin;
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   const handleCheck = (e) => {
     setChecked(!Boolean(e.target.value));
     if (Boolean(e.target.value)) {
-      setEmail('sample@gmail.com');
-      setPassword('sampleacc');
+      setEmail("sample@gmail.com");
+      setPassword("sampleacc");
     } else {
-      setEmail('');
-      setPassword('');
+      setEmail("");
+      setPassword("");
     }
   };
 
   useEffect(() => {
-    if(userInfo){
-      history.push('/');
+    if (userInfo) {
+      history.push("/");
     }
-  },[history,userInfo])
+  }, [history, userInfo]);
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (email !== '' && password !== '' && password.length > 8){
-      dispatch(loginUser(email,password));
-    }else{
-      alert('Login failed')
+    if (email !== "" && password !== "" && password.length > 8) {
+      dispatch(loginUser(email, password));
+    } else {
+      alert("Login failed");
     }
-  }
+  };
 
   const handleShowPassword = () => {
     setShowPassword((prevPass) => !prevPass);
@@ -78,7 +78,7 @@ function Login() {
     <div className={classes.body}>
       <Container component="main" maxWidth="xs" className={classes.container}>
         <Paper className={classes.paper} elevation={3}>
-          <Avatar className={classes.avatar}>EP</Avatar>
+          <Avatar className={classes.avatar} src="./logo3.png" />
           <h2>Event Planner</h2>
           <Typography varient="h4">Lorem ipsum dolor sit.</Typography>
           <form
@@ -102,7 +102,7 @@ function Login() {
               <TextField
                 name="password"
                 label="password"
-                onInput = {(e) => setPassword(e.target.value)}
+                onInput={(e) => setPassword(e.target.value)}
                 type={showPassword ? "text" : "password"}
                 handleShowPassword={handleShowPassword}
                 xs={6}
@@ -119,7 +119,7 @@ function Login() {
                       onChange={handleCheck}
                       name="checkedB"
                       color="primary"
-                      value = {checked}
+                      value={checked}
                     />
                   }
                   label="Login with sample account"
@@ -156,33 +156,31 @@ function Login() {
               onFailure={googleFailure}
               cookiePolicy="single_host_origin"
             />
-            
+
             <Grid container justify="center">
               <Grid item>
                 <Button
                   fullWidth
                   varient="contained"
                   color="secondary"
-                  style={{textTransform:"none"}}
+                  style={{ textTransform: "none" }}
                 >
                   Forgot Password ?
                 </Button>
               </Grid>
-              
+
               <Grid item>
-              <Link to="/signup"  style={{textDecoration:"none"}}>
-                <Button
-                  fullWidth
-                  varient="contained"
-                  color="secondary"
-                  style={{textTransform:"none"}}
-                >
-                  Don't have an account? Create One
-                </Button>
+                <Link to="/signup" style={{ textDecoration: "none" }}>
+                  <Button
+                    fullWidth
+                    varient="contained"
+                    color="secondary"
+                    style={{ textTransform: "none" }}
+                  >
+                    Don't have an account? Create One
+                  </Button>
                 </Link>
               </Grid>
-              
-              
             </Grid>
           </form>
         </Paper>
