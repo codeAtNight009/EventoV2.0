@@ -33,9 +33,6 @@ With Evento we are automating and digitalizing Event Management and solving all 
 ![image](https://user-images.githubusercontent.com/61822515/131075994-c5c3815c-9248-4652-a609-999b7c8a80bd.png)
 ![image](https://user-images.githubusercontent.com/61822515/131075970-35a8ff53-f3d2-441f-b79a-c64a3c8f2718.png)
 
-### Event Info Section 
-ye lagani hai 
-
 ### Creating Task Section
 ![image](https://user-images.githubusercontent.com/61822515/131076153-be02b6b5-848f-476a-9d00-6b57bf22df37.png)
 
